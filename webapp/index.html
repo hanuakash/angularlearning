@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.2.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="myApp.js"></script>
+    <script src="ng/controllers/mainController.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootswatch/superhero/bootstrap.css" rel="stylesheet" />
+</head>
+<body ng-app="myApp" ng-controller="mainController">
+    <input type="text" ng-model="user.title" value="" />
+    <br />
+    <label> {{user.title}}</label>
+</body>
+</html>
