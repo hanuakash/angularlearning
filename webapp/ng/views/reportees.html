@@ -23,12 +23,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="r in reportees|locationWise:location">
-                <td><h4>{{r.empno}}</h4></td>
-                <td><h4>{{r.email}}</h4></td>
-                <td><h4>{{r.alias}}</h4></td>
-                <td><h4>{{r.location}}</h4></td>
-            </tr>
+            <tr employee="r" employee-row ng-repeat="r in reportees|locationWise:location"></tr>
+            
         </tbody>
     </table>
 </div>
