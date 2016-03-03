@@ -1,5 +1,5 @@
 ﻿(function () {
-    var loginController = angular.module("myApp").controller("loginController", function (svcEmployee, $scope, $http) {
+    var loginController = angular.module("myApp").controller("loginController", function (svcEmployee, $scope, $http, $location) {
         console.info("we are inside the login controller");
         $scope.username = "";
         $scope.password = "";
@@ -11,6 +11,7 @@
             svcEmployee.getOfUserName($scope.username).then(function (data) {
                 verify(data);
                 console.log("we have received the data from the server");
+                $location.url("/users/"+ data.empno+"/reportees");
             }, function (data) {
                 console.error("server error");
             });
