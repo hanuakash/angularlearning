@@ -4,5 +4,8 @@
             alias:"Niranjan"
         }
         $scope.message = "This is hi from inside the controller";
+        $scope.onClickSomething = function (something) {
+            console.log("something is clicked.. " + something);
+        }
     })
 })();
