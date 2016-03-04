@@ -8,8 +8,12 @@
             },
             transclude:true,
             templateUrl:"/ng/templates/my-frame.html",
-            controller: function ($scope) { },
-            link: function (scope, elem, attrs, ctroller) { }
+            controller: function ($scope, $rootScope) {
+                $scope.headerClicked = function () {
+                    $rootScope.$broadcast("header-clicked", { value: 10 });
+                }
+            },
+            
         }
     })
 })();
