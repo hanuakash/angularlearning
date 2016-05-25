@@ -1,5 +1,5 @@
 ﻿(function () {
-    var loginController = angular.module("myApp").controller("loginController", function ($scope, $http) {
+    var loginController = angular.module("myApp").controller("loginController", function ($scope,  svcWebServer) {
        
         var validation = function () {
             $scope.invalid.username = $scope.user.username.length > 0 ? false : true;
@@ -17,18 +17,11 @@
         }
         $scope.login = function () {
             if (validation() == true) {
-                var url = "";//"http://localhost:8080/webapi/" + $scope.user.username + "/" + $scope.user.password;
-                $http.get(url).then(function (response) {
-                    console.log("success");
-                    console.log(response.status);
-                    console.log(response.data);
-                }, function (response) {
-                    console.log("failure");
-                    console.log(response.status);
-                    console.log(response.ExceptionMessage);
+                svcWebServer.loginUser($scope.user.username, $scope.user.password).then(function (data) {
+                    console.log("login successful");
+                }, function (data) {
+                    console.log("login failed");
                 });
-              
-                console.log("this is on the main thread .. ");
             }
             else {
                 console.error("the validation has failed");
