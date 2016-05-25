@@ -1,5 +1,5 @@
 ﻿(function () {
-    var loginController = angular.module("myApp").controller("loginController", function ($scope,  svcWebServer) {
+    var loginController = angular.module("myApp").controller("loginController", function ($scope,  svcWebServer, $location) {
        
         var validation = function () {
             $scope.invalid.username = $scope.user.username.length > 0 ? false : true;
@@ -18,13 +18,10 @@
         $scope.login = function () {
             if (validation() == true) {
                 svcWebServer.loginUser($scope.user.username, $scope.user.password).then(function (data) {
-                    console.log("login successful");
+                    $location.url("/settings");
                 }, function (data) {
                     console.log("login failed");
                 });
-            }
-            else {
-                console.error("the validation has failed");
             }
         }
        
