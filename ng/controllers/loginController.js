@@ -18,7 +18,7 @@
         $scope.login = function () {
             if (validation() == true) {
                 svcWebServer.loginUser($scope.user.username, $scope.user.password).then(function (data) {
-                    $location.url("/settings");
+                    $location.url("/employees");
                 }, function (data) {
                     console.log("login failed");
                 });
