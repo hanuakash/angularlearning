@@ -1,5 +1,9 @@
 ﻿(function () {
     var employeesController = angular.module("myApp").controller("employeesController", function ($scope) {
+
+        $scope.btnDisable = false;
+        $scope.doneSaving = false;
+
         $scope.employees = [
             { empno: 1, email: "person_1", alias: "person1", location: "pune", role: "developer", sel:false},
             { empno: 2, email: "person_2", alias: "person2", location: "pune", role: "developer", sel:false },
@@ -12,6 +16,35 @@
             { empno: 9, email: "person_9", alias: "person9", location: "pune", role: "hardware engineer", sel: false },
             { empno: 10, email: "person_10", alias: "person10", location: "pune", role: "manager", sel: false },
         ];
-       
+        $scope.saveChanges = function () {
+            var allEmployeesChanged = $scope.employees.filter(function (el, ix) {
+                return el.sel == true;
+            });
+            //here we ready to send this to the http service
+            //HTTPGET : http://locahost:8080/api/employees/pune
+
+            //HTTPPUT : payload
+            //HTTPPATCH : payload
+
+            //HTTPPOST :payload
+
+            //HTTPDEL
+
+            var emailsToDelete = allEmployeesChanged.map(function ( el,ix) {
+                return el.email;
+            })
+            console.table(allEmployeesChanged);
+            console.table(emailsToDelete);
+            console.log("we are ready to make the changes");
+            $scope.doneSaving = true;
+        }
+        $scope.$watch("doneSaving", function (after, before) {
+            if (after == true) {
+                $scope.btnDisable = true;
+            }
+            else {
+                $scope.btnDisable = false;
+            }
+        })
     })
 })();//IIFE

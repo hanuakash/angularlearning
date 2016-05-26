@@ -1,7 +1,7 @@
 ﻿<div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
     <table class="table table-responsive table-striped">
         <thead>
-            <tr class="info">
+            <tr class="active">
                 <th>
                     <span class="glyphicon glyphicon-trash"></span>
                 </th>
@@ -28,4 +28,9 @@
             </tr>
         </tbody>
     </table>
+    <br />
+    
+    <span class="pull-right">
+        <button class="btn btn-default" ng-click="saveChanges()" ng-hide="btnDisable==true">Save Changes</button>
+    </span>
 </div>
