@@ -1,5 +1,5 @@
 ﻿(function () {
-    var svcWebServer = angular.module("myApp").service("svcWebServer", function ($http, $q, $timeout) {
+    var svcWebServer = angular.module("myApp").service("svcWebServer", function ($http, $q, $timeout, $rootScope) {
         this.loggedInUser = {};
 
         this.loginUser = function (username, password) {
@@ -16,10 +16,12 @@
             //    console.log(response.ExceptionMessage);
             //    deferred.reject(response.data);
             //});
+            $rootScope.$broadcast("busy", {});
             $timeout(function () {
                 //this function is fired after 2 seconds
                 deferred.resolve({ name: "niranjan", location: "Pune" });
-            }, 2000);
+                $rootScope.$broadcast("done", {});
+            }, 5000);
             return deferred.promise;
         }
     })
