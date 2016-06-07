@@ -1,14 +1,12 @@
 ﻿//dependent modules go in that array, else empty
 
 (function () {
-    var myApp = angular.module("myApp", [])
-    var mainController = myApp.controller("mainController", function ($scope) {
-        $scope.message = "Hi there , from inside the controller";
-        $scope.someMessage = "this is some message from inside the controller";
-
-    })
-    var innerController = myApp.controller("innerController", function ($scope) {
-        $scope.syriaMessage = "Raqqa is ours, ISIL has been repelled!";
-        $scope.message = "this is from the inner controller";
+    angular.module("myApp", ["ngRoute"])
+    .config(function ($routeProvider) {
+        $routeProvider
+        .when("/", { templateUrl: "/ng/views/login.html", controller: "" })
+        .when("/login", { templateUrl: "/ng/views/login.html", controller: "" })
+        .when("/settings", { templateUrl: "/ng/views/settings.html", controller: "" })
+        .otherwise({redirectTo:"/"})
     })
 })() //IIFE - immediately invoked function expression
