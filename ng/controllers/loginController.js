@@ -13,9 +13,9 @@
                 $scope.showWarning = false;
                 console.log("We are ready to login and hit the webservice");
                 svcWebapi.getUser($scope.userInfo.username, $scope.userInfo.password).then(function (data) {
-                    console.log(data);
+                    console.log("we have received the success resoponse from the server!!");
                 }, function (data) {
-                    console.error(data);
+                    console.error("we have encountered an error on the server");
                 });
             }
             else {
