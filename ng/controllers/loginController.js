@@ -1,5 +1,5 @@
 ﻿(function () {
-    var loginController = angular.module("myApp").controller("loginController", function ($scope, $http) {
+    var loginController = angular.module("myApp").controller("loginController", function ($scope, svcWebapi) {
         $scope.showWarning = false;
         $scope.userInfo = {
             username: "",
@@ -12,22 +12,11 @@
             if (validated() == true) {
                 $scope.showWarning = false;
                 console.log("We are ready to login and hit the webservice");
-                //this is where you go and hit the service
-                //VERBS:
-                //GET
-                //PUT
-                //PATCH
-                //POST
-                //DEL
-                $http.get("http://localhost:8080/myapi/users/username").then(function (response) {
-                    console.log("success response");
-                    console.log(response.data);
-                    console.log(response.status);
-                }, function (response) {
-                    console.log("error response");
-                    console.log(response.ExceptionMessage);
-                    console.log(response.status);
-                })
+                svcWebapi.getUser($scope.userInfo.username, $scope.userInfo.password).then(function (data) {
+                    console.log(data);
+                }, function (data) {
+                    console.error(data);
+                });
             }
             else {
                 $scope.showWarning = true;
