@@ -2,44 +2,30 @@
     <table class="table table-responsive table-striped">
         <thead>
             <tr class="active">
-                <th>
-                    <h4>Empno</h4>
-                </th>
-                <th>
-                    <h4>Email</h4>
-                </th>
-                <th>
-                    <h4>Alias</h4>
-                </th>
-                <th>
-                    <h4>Location</h4>
-                </th>
-                <th>
-                    <h4>DU</h4>
-                </th>
+                <th><h4>
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </h4></th>
+                <th><h4>Empno</h4></th>
+                <th><h4>Email</h4></th>
+                <th><h4>Alias</h4></th>
+                <th><h4>Location</h4></th>
+                <th><h4>DU</h4></th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="e in employees">
-                <td>
-                    <h4>{{e.empno}}</h4>
-                </td>
-                <td>
-                    <h4>{{e.email}}</h4>
-                </td>
-                <td>
-                    <h4>{{e.alias}}</h4>
-                </td>
-                <td>
-                    <h4>{{e.location}}</h4>
-                </td>
-                <td>
-                    <h4>{{e.du}}</h4>
-                </td>
+            <tr ng-repeat="e in employees" style="cursor:pointer" ng-click="toggleSelectRow(e)">
+                <td><h4>
+                        <span ng-class="{true:'glyphicon glyphicon-ok', false:''}[e.sel==true]"></span>
+                    </h4></td>
+                <td><h4>{{e.empno}}</h4></td>
+                <td><h4>{{e.email}}</h4></td>
+                <td><h4>{{e.alias}}</h4></td>
+                <td><h4>{{e.location}}</h4></td>
+                <td><h4>{{e.du}}</h4></td>
             </tr>
         </tbody>
     </table>
     <br />
     <br />
-    <button class="btn btn-block" ng-click="popEmployee()">Pop</button>
+    <button class="btn btn-block" ng-click="saveChanges()">Save changes</button>
 </div>
