@@ -4,7 +4,10 @@
             <h3 class="panel-title">Niranjan Awati</h3>
         </div>
         <div class="panel-body" ng-hide="collapse==false">
-            {{contact}}
+           <!-- there has to be a placeholder here .. so that angular knows he has to put dyn content here -->
+            <ng-transclude></ng-transclude>
         </div>
+
     </div>
+
 </div>

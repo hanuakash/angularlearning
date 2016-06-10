@@ -12,9 +12,8 @@
                     $scope.collapse = !$scope.collapse;
                 }
                 $scope.contact  = "83909096960"
-            }
-            
-
+            },
+            transclude:true
         }
     })
 })();
