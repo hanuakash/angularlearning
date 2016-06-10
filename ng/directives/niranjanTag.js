@@ -1,4 +1,5 @@
 ﻿(function () {
+   
     var niranjanTag = angular.module("myApp").directive("niranjanTag", function () {
         return {
             restrict: "EA",
@@ -10,7 +11,10 @@
                 $scope.toggleCollapse = function () {
                     $scope.collapse = !$scope.collapse;
                 }
+                $scope.contact  = "83909096960"
             }
+            
+
         }
     })
 })();
