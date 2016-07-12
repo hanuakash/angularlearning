@@ -6,5 +6,6 @@
             empno: 41993
         };
         $scope.locations = [];
+        
     })
 })();

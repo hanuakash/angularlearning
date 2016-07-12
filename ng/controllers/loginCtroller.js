@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module("myApp").controller("loginCtroller", function ($scope, $route) {
+    angular.module("myApp").controller("loginCtroller", function ($scope, $route, svcApi) {
         $scope.warning = null;
         $scope.user = {
             email: "",
@@ -28,9 +28,15 @@
                 }
             }
         }
+        //{"_id" : 45345dfsdhfjkdh ,email:"niranjan_awati", "empno":41993, "location":"Pune" }
         $scope.login = function () {
             if (validation() == true) {
-                console.log("we are ready to make the http call");
+                svcApi.getUserDetails().then(function (data) {
+                    console.debug(data)
+                }, function (data) {
+                    console.debug(data)
+                })
+           
             }
             else {
                 console.error("User input incorrect")
