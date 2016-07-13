@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module("myApp").controller("loginCtroller", function ($scope, $route, svcApi) {
+    angular.module("myApp").controller("loginCtroller", function ($scope, $route, svcApi, $location) {
         $scope.warning = null;
         $scope.user = {
             email: "",
@@ -33,8 +33,9 @@
             if (validation() == true) {
                 console.log("We have hit the service");
                 svcApi.getUserDetails().then(function (data) {
-                    console.log("we have received from the service");
-                    console.debug(data)
+                    //this is where we can login to the application
+                    //lets see that now .. 
+                    $location.url("/employees");
                 }, function (data) {
                     console.debug(data)
                 })
