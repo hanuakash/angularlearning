@@ -3,8 +3,10 @@
         return {
             restrict: "E",
             replace: false,
-            templateUrl:"ng/templates/awaiting-ribbon.html"
-
+            templateUrl:"ng/templates/awaiting-ribbon.html",
+            scope: {
+                ribbon:"="
+            },
         }
     })
 })();
