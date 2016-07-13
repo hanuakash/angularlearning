@@ -13,7 +13,7 @@
             //});
             $timeout(function () {
                 deferred.resolve({message:"Hi there this is from inside the service"});
-            }, 1700)
+            }, 5000)
             return deferred.promise;
         }
         this.employeesList = function () {

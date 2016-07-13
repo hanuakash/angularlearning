@@ -1,6 +1,7 @@
 ﻿(function () {
     angular.module("myApp").controller("loginCtroller", function ($scope, $route, svcApi, $location) {
         $scope.warning = null;
+        $scope.awaiting = null;
         $scope.user = {
             email: "",
             password: ""
@@ -31,10 +32,12 @@
         //{"_id" : 45345dfsdhfjkdh ,email:"niranjan_awati", "empno":41993, "location":"Pune" }
         $scope.login = function () {
             if (validation() == true) {
+                $scope.awaiting = { message: "Authenticating your credentials ..." };
                 console.log("We have hit the service");
                 svcApi.getUserDetails().then(function (data) {
                     //this is where we can login to the application
                     //lets see that now .. 
+                    $scope.awaiting = null;
                     $location.url("/employees");
                 }, function (data) {
                     console.debug(data)
