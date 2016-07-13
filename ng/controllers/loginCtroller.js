@@ -31,7 +31,9 @@
         //{"_id" : 45345dfsdhfjkdh ,email:"niranjan_awati", "empno":41993, "location":"Pune" }
         $scope.login = function () {
             if (validation() == true) {
+                console.log("We have hit the service");
                 svcApi.getUserDetails().then(function (data) {
+                    console.log("we have received from the service");
                     console.debug(data)
                 }, function (data) {
                     console.debug(data)
