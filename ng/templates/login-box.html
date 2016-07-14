@@ -1,0 +1,37 @@
+﻿<div>
+    <form class="form-horizontal well">
+        <fieldset>
+            <legend>Login</legend>
+
+            <awaiting-ribbon ribbon="awaiting" message="awaitingMessage"></awaiting-ribbon>
+
+            <section ng-hide="awaiting==true">
+                <div ng-class="{false:'form-group', true:'form-group has-warning'}[warning.errorEmail==true]">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Email" ng-model="user.email">
+                        <span class="input-group-addon">@infosys.com</span>
+
+                    </div>
+                </div>
+                <div ng-class="{false:'form-group', true:'form-group has-warning'}[warning.errorPassword==true]">
+                    <div class="input-group">
+
+                        <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" ng-click="login()">
+                                <span class="glyphicon glyphicon-send"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </fieldset>
+    </form>
+    <div class="alert alert-dismissible alert-warning" ng-hide="warning==null">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4>Warning!</h4>
+        <p>{{warning.message}}</p>
+        <br />
+        <button class="btn btn-default" ng-click="retry()">Try Again!</button>
+    </div>
+</div>

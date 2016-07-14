@@ -2,8 +2,8 @@
     angular.module("myApp", ["ngRoute"])
     .config(function ($routeProvider) {
         $routeProvider
-        .when("/", { templateUrl: "ng/views/login.html", controller: "loginCtroller" })
-        .when("/login", { templateUrl: "ng/views/login.html", controller: "loginCtroller" })
+        .when("/", { templateUrl: "ng/views/login.html", controller: "" })
+        .when("/login", { templateUrl: "ng/views/login.html", controller: "" })
         .when("/settings", { templateUrl: "ng/views/settings.html", controller: "" })
         .when("/employees", { templateUrl: "ng/views/employees.html", controller: "employeesCtroller" })
         .otherwise({redirectTo:"/"})

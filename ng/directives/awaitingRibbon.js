@@ -8,6 +8,10 @@
                 ribbon: "=",
                 message:"="
             },
+            controller: function ($scope) {
+                console.log($scope.ribbon);
+                console.log($scope.message);
+            }
         }
     })
 })();
