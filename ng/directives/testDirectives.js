@@ -19,7 +19,10 @@
             scope:true,
             templateUrl: "ng/templates/test.html",
             controller: function ($scope) {
-               
+                //$scope.user = {
+                //    email:"kneerunjun@outlook.com"
+                //}
+                $scope.user.email = "kneerunjun@gmail.com";
             }
         }
     })
@@ -30,11 +33,7 @@
             scope:false,
             templateUrl: "ng/templates/test.html",
             controller: function ($scope) {
-                $scope.user = {
-                    email: "kneerunjun@gmail.com",
-                    empno: 1,
-                    location: "Pune City"
-                }
+               
             }
         }
     })

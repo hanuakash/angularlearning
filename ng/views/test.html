@@ -1,6 +1,6 @@
 ﻿<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12 well">
     <!-- 3 idiots, 3 tests!! .. this if you can understand clearly you are really good placed in angular -->
-
+    <!-- 
     <p>From within the controller</p>
     <p>{{user.email}}</p>
     <p>{{user.empno}}</p>
@@ -11,8 +11,16 @@
     <inherit-test></inherit-test>
 
     <shared-test></shared-test>
-
+        -->
     <!-- make sure you have understood this thorougly.. -->
 
     <!-- next up is the dreaded TRANSCLUSION!! .. brace yourself .. the waters are deep , the sea is rough! -->
+
+    <contact-card title="user.title">
+        <p>{{user.details.contact}}</p>
+        <p>{{user.details.email}}</p>
+        <p>{{user.details.blog}}</p>
+        <p>{{user.details.website}}</p>
+    </contact-card>
+    
 </div>

@@ -1,9 +1,13 @@
 ﻿(function () {
     var testCtroller = angular.module("myApp").controller("testCtroller", function ($scope) {
         $scope.user = {
-            email: "niranjan_awati",
-            empno: 41993,
-            location:"Pune"
+            title: "Niranjan Awati",
+            details: {
+                contact: "54353",
+                email: "niranjan_awati",
+                blog: "fdfsfs//wordpress.com",
+                website:"http://dsdasdsaadasda"
+            }
         }
     })
 })();

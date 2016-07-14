@@ -1,0 +1,13 @@
+﻿<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            {{title}}
+            <span class="pull-right">
+                <span ng-class="{true:'glyphicon glyphicon-triangle-bottom', false:'glyphicon glyphicon-triangle-top'}[collapsed==true]" ng-click="toggleCollapse()"></span>
+            </span>
+        </h3>
+    </div>
+    <div class="panel-body" ng-hide="collapsed==true" >
+       <ng-transclude></ng-transclude>
+    </div>
+</div>
