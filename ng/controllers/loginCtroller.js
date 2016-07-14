@@ -2,6 +2,7 @@
     angular.module("myApp").controller("loginCtroller", function ($scope, $route, svcApi, $location) {
         $scope.warning = null;
         $scope.awaiting = false;
+        $scope.awaitingMessage = "";
         $scope.user = {
             email: "",
             password: ""
@@ -33,7 +34,8 @@
         $scope.login = function () {
             if (validation() == true) {
                 $scope.awaiting = true;
-                console.log("We have hit the service");
+                $scope.awaitingMessage = "We have hit the service";
+
                 svcApi.getUserDetails().then(function (data) {
                     //this is where we can login to the application
                     //lets see that now .. 

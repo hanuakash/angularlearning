@@ -4,8 +4,8 @@
         <fieldset>
             <legend>Login</legend>
            
-           <awaiting-ribbon ribbon="awaiting"></awaiting-ribbon>
-            
+            <awaiting-ribbon  ribbon="awaiting" message="awaitingMessage"></awaiting-ribbon>
+           
             <section ng-hide="awaiting==true">
                 <div ng-class="{false:'form-group', true:'form-group has-warning'}[warning.errorEmail==true]">
                     <div class="input-group">

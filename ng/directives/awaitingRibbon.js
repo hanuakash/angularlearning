@@ -5,7 +5,8 @@
             replace: false,
             templateUrl:"ng/templates/awaiting-ribbon.html",
             scope: {
-                ribbon:"="
+                ribbon: "=",
+                message:"="
             },
         }
     })
