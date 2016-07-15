@@ -3,12 +3,28 @@
         return {
             restrict: "E",
             replace: false,
-            scope: {},
+            scope: {
+
+            },
             templateUrl: "ng/templates/test.html",
             controller: function ($scope) {
                 //$scope.user.email = "kneerunjun@gmail.com"
                 //$scope.user.empno = 1,
                 //$scope.user.location ="Pune city"
+                console.log("isoTest:from inside the controller");
+
+            },
+            compile: function (tElem, tAttrs) {
+                console.log("isoTest: from inside compile");
+                return {
+                    pre: function (scope, elem, attrs) {
+                        console.log("isoTest: from inside the pre function");
+                        
+                    },
+                    post: function (scope, elem, attrs) {
+                        console.log("isoTest:from inside the link function");
+                    }
+                }
             },
         }
     })

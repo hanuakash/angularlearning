@@ -1,5 +1,5 @@
 ﻿(function () {
-    var testCtroller = angular.module("myApp").controller("testCtroller", function ($scope) {
+    var testCtroller = angular.module("myApp").controller("testCtroller", function ($scope, $rootScope) {
         $scope.user = {
             title: "Niranjan Awati",
             details: {
@@ -12,8 +12,17 @@
         $scope.user = {
             title: "Niranjan Awati",
             details: {
-               bankaccount:"456565465756"
+                bankaccount: "456565465756"
             }
+        };
+        $scope.fireEvent = function () {
+            console.log("firing the message");
+            $rootScope.$broadcast("test-event", { message: "Hi there from within the controller" });
         }
+
+        $scope.listener = function () {
+            console.log("We have received your message");
+        }
+        
     })
 })();
