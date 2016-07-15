@@ -9,5 +9,11 @@
                 website:"http://dsdasdsaadasda"
             }
         }
+        $scope.user = {
+            title: "Niranjan Awati",
+            details: {
+               bankaccount:"456565465756"
+            }
+        }
     })
 })();
